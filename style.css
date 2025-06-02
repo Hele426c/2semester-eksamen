@@ -1,15 +1,4 @@
-<DOCTYPE html>
-<html lang="da">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>JuiceOrganic Login</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
-                                                                                                                                                                                                                                                    * {
-                                                                                                                                                                                                                                                        box-sizing: border-box;
-                                                                                                                                                                                                                                                    }
-
+ * {box-sizing: border-box;}
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -234,7 +223,7 @@ header {
     text-align: center;
 }
 .top-picks h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
 }
 .carousel-container {
     position: relative;
@@ -265,10 +254,10 @@ header {
     cursor: pointer;
 }
 .trustpilot-box {
-    margin: 2rem;
+    margin: 5rem;
     text-align: center;
-    padding: 1rem;
-    border-radius: 12px;
+    padding: 4rem;
+    border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 footer {
@@ -278,8 +267,8 @@ footer {
     background: #fff;
     display: flex;
     justify-content: space-around;
-    padding: 0.7rem 0;
-    border-top: 1px solid #ddd;
+    padding: 0.8rem 0;
+    border-top: 4px solid #ddd;
 }
 footer img {
     width: 28px;
