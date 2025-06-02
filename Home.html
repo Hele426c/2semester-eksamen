@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JuiceOrganic Produkter</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #fff;
+        }
+        header {
+            background-color: #fce4ec;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .start-order-btn {
+            background-color: #d4e8b3;
+            color: #711269;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 3px solid #711269;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        .search-container {
+            margin: 1rem;
+            text-align: center;
+        }
+        .search-container input {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            width: 80%;
+        }
+        .product-list {
+            padding: 0 1rem;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .product img {
+            width: 90%;
+            max-width: 250px;
+            margin: auto;
+        }
+        .rating {
+            font-size: 0.9rem;
+            color: #4caf50;
+            margin-left: 0.5rem;
+        }
+        .top-picks {
+            background-color: #ffeef5;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .top-picks h2 {
+            margin-bottom: 1rem;
+        }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            height: 250px;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        .carousel-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .carousel-buttons button {
+            margin: 0 0.5rem;
+            padding: 0.3rem 0.7rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .trustpilot-box {
+            margin: 2rem;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.7rem 0;
+            border-top: 5px solid #ddd;
+        }
+        footer img {
+            width: 60px;
+            height: 40px;
+        }
+    </style>
+
+</head>
+<body>
+
+<header>
+    <div class="start-order-btn">START DIN ORDRE<br><small>Juice kits</small></div>
+</header>
+
+<div class="search-container">
+    <input type="text" placeholder="Hvad søger du?" />
+</div>
+
+<div class="product-list">
+    <div class="product">
+        <span class="rating">97%</span>
+        <img src="Billeder/BalanceKit.jpg" alt="Juice Kit 1" />
+        <button onclick="window.location.href='Product.html'">Se produkt</button>
+    </div>
+    <div class="product">
+        <span class="rating">96%</span>
+        <img src="Billeder/VitaKit.jpg" alt="Juice Kit 2" />
+    </div>
+    <div class="product">
+        <span class="rating">98%</span>
+        <img src="Billeder/HydraKit.jpg" alt="Juice Kit 3" />
+    </div>
+    <div class="product">
+        <span class="rating">92%</span>
+        <img src="Billeder/DailyVital.jpg" alt="Juice Kit 4" />
+    </div>
+    <div class="product">
+        <span class="rating">75%</span>
+        <img src="Billeder/JuiceBoost.jpg" alt="Juice Kit 5" />
+    </div>
+</div>
+
+<section class="top-picks">
+    <h2>Vores top picks</h2>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <img src="Billeder/JuiceBoost.jpg" alt="Top pick 1" />
+            <img src="Billeder/DailyVital.jpg" alt="Top pick 2" />
+            <img src="Billeder/BalanceKit.jpg" alt="Top pick 3" />
+        </div>
+    </div>
+    <div class="carousel-buttons">
+        <button onclick="prevSlide()">←</button>
+        <button onclick="nextSlide()">→</button>
+    </div>
+    <p id="caption">BalanceKit</p>
+</section>
+
+<div class="trustpilot-box">
+
+    <h3>Fremragende</h3> <p><small>Baseret på <strong>749 anmeldelser</strong></small><br>⭐ Trustpilot</p>
+</div>
+
+<footer>
+    <img src="kurv.png" alt="Home" />
+    <img src="tracking.png" alt="Shop" />
+    <img src="Billeder/Logo.png" alt="JuiceOrganic" />
+    <img src="fællesskab.png" alt="Profil" />
+    <img src="profil.png" alt="Indstillinger" />
+</footer>
+
+<script>
+    let currentSlide = 0;
+    const carousel = document.getElementById('carousel');
+    const totalSlides = carousel.children.length;
+
+    function updateCarousel() {
+        const width = carousel.clientWidth;
+        carousel.style.transform = `translateX(-${currentSlide * width}px)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    window.addEventListener('resize', updateCarousel);
+    window.addEventListener('load', updateCarousel);
+</script>
+</body>
+</html>

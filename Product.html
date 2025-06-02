@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BalanceKit - JuiceOrganic</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        .produktbillede {
+            display: flex;
+            justify-content: center;
+            margin: 1rem;
+        }
+        .produktbillede img {
+            max-width: 70%;
+            border-radius: 2rem;
+            border: 10px solid #c9dea4;
+            background: #f9d8e3;
+        }
+        .pris {
+            text-align: left;
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .antal-vælger {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        .antal-vælger button {
+            font-size: 1.5rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+        }
+        .kurv-knap {
+            display: block;
+            margin: 0 auto;
+            background-color: #c9dea4;
+            border: none;
+            border-radius: 20px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        .kort-info, .beskrivelse {
+            margin: 2rem 1rem;
+            padding: 1rem;
+            border-radius: 2rem;
+            background-color: #f9d8e3;
+            border: 5px solid #c9dea4;
+        }
+        .beskrivelse h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .beskrivelse p {
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="home.html"><img src="Billeder/logo.png" alt="JuiceOrganic logo" class="logo" width="100"/></a>
+</header>
+
+<section class="produktbillede">
+    <img src="Billeder/BalanceKit.jpg" alt="BalanceKit produktbillede">
+</section>
+
+<div class="pris">
+    199,00 Kr.
+</div>
+
+<div class="antal-vælger">
+    <label for="antal">Antal:</label>
+    <button onclick="ændrAntal(-1)">-</button>
+    <span id="antal">1</span>
+    <button onclick="ændrAntal(1)">+</button>
+</div>
+
+<button class="kurv-knap">LÆG I KURV</button>
+
+<section class="kort-info">
+    <strong>Indhold af kit:</strong>
+    <ul>
+        <li>4 stk. Rabarber drik</li>
+        <li>4 stk. Æble drik</li>
+        <li>7 stk. vand</li>
+        <li>4 stk. Ginger shots m. rabarber</li>
+    </ul>
+</section>
+
+<section class="beskrivelse">
+    <h2>BalanceKit</h2>
+    <p><strong>Hold maven i ro og kroppen i topform med BalanceKit</strong> – et velsmagende juicekit udviklet til at støtte din fordøjelse og give dig et naturligt energiboost.</p>
+    <p>Med en nøje udvalgt kombination af æble og rabarber, får du en frisk, frugtig smag fyldt med kostfibre, som hjælper med at holde din mave i balance – hver eneste dag.</p>
+    <p><strong>Fordele ved BalanceKit:</strong></p>
+    <ul>
+        <li>Naturligt fiberrig – fremmer en sund og velfungerende fordøjelse</li>
+        <li>Rig på vitamin C og K – styrker immunforsvar og knoglesundhed</li>
+        <li>Frisk og frugtig smag – perfekt som en del af din morgenrutine</li>
+        <li>Nemt at bruge – alt du skal bruge samlet i ét kit</li>
+    </ul>
+    <p><strong>Giv din mave den kærlige opmærksomhed, den fortjener – med BalanceKit.</strong></p>
+</section>
+
+<footer>
+    JuicOrganic &copy; 2025
+</footer>
+
+<script>
+    let antal = 1;
+    function ændrAntal(værdi) {
+        antal += værdi;
+        if (antal < 1) antal = 1;
+        document.getElementById("antal").innerText = antal;
+    }
+</script>
+</body>
+</html>
